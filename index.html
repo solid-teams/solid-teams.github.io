@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>solid-teams — federated team workspace</title>
+<meta name="description" content="A federated team workspace on your own Solid pods. Slack-shaped chat, DMs, shared docs, team blog, task tracking, file browser. For teams that want to own their data.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topnav">
+  <a class="brand" href="/">
+    <span class="brand-mark">▣</span>
+    <span class="brand-name">solid-teams</span>
+  </a>
+  <nav>
+    <a href="#what">What</a>
+    <a href="#why">Why</a>
+    <a href="#install">Install</a>
+    <a href="https://github.com/solid-teams/solid-teams" target="_blank" rel="noopener">GitHub</a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="hero">
+    <h1>Your team. Your pods.<br><span class="accent">No middleman.</span></h1>
+    <p class="lede">
+      A federated team workspace running on Solid pods. Slack-shaped chat,
+      DMs, shared docs, announcements, tasks, files — each member's data on
+      their own pod, the team working across pods.
+    </p>
+    <div class="cta-row">
+      <a class="cta primary" href="#install">Install in 2 minutes →</a>
+      <a class="cta secondary" href="https://github.com/solid-teams/solid-teams" target="_blank" rel="noopener">Read the source</a>
+    </div>
+    <p class="hero-foot">
+      Open source · AGPL-3.0 · Built on
+      <a href="https://github.com/JavaScriptSolidServer/JavaScriptSolidServer" target="_blank" rel="noopener">JavaScript Solid Server</a>
+    </p>
+  </section>
+
+  <section id="what" class="what">
+    <h2>What's inside</h2>
+    <p class="section-lede">
+      One install command. Eight apps. All writing to your pod as JSON-LD,
+      so any other pod-aware tool can read them.
+    </p>
+    <ul class="apps">
+      <li>
+        <h3>plaza</h3>
+        <p>Group chat — Slack-shaped UI, Solid-native data. Cross-pod by default once you open it to visitors.</p>
+      </li>
+      <li>
+        <h3>chat</h3>
+        <p>1:1 direct messages across Solid pods. Nostr-encrypted, live delivery.</p>
+      </li>
+      <li>
+        <h3>vellum</h3>
+        <p>Markdown editor. Shared specs, design docs, meeting notes — all on the team's pods.</p>
+      </li>
+      <li>
+        <h3>plume</h3>
+        <p>Team blog. Announcements, weekly updates, decision logs. Each post is a resource other apps can read.</p>
+      </li>
+      <li>
+        <h3>taskify</h3>
+        <p>Task tracking and dashboard. Who's doing what, what's done, where we are.</p>
+      </li>
+      <li>
+        <h3>explorer</h3>
+        <p>File browser with per-row ACL. See and share what's on the pod with keyboard nav and trash-undo.</p>
+      </li>
+      <li>
+        <h3>hub</h3>
+        <p>Multi-app workspace shell. Opens any pod resource in the right app.</p>
+      </li>
+      <li>
+        <h3>chrome</h3>
+        <p>Desktop-style window manager. For teammates who want everything in a launcher.</p>
+      </li>
+    </ul>
+  </section>
+
+  <section id="why" class="why">
+    <h2>Why pods, not platforms</h2>
+    <div class="why-grid">
+      <div>
+        <h3>You own your messages.</h3>
+        <p>
+          Slack owns your messages. Notion owns your docs. Linear owns your tasks.
+          When you outgrow the price, the integration, or the company itself,
+          your team's history is locked behind their export tools.
+        </p>
+        <p>
+          solid-teams flips that. Each member's data is on their own Solid pod.
+          Leaving the team doesn't lose their work. Closing the team doesn't
+          delete the conversation.
+        </p>
+      </div>
+      <div>
+        <h3>Federated by default.</h3>
+        <p>
+          No Slack Connect, no Microsoft Teams Federation, no shared-workspace
+          setup. Pods talk to pods natively. A teammate at one pod and a
+          teammate at another are in the same room, no bridge bot required.
+        </p>
+        <p>
+          The protocol is the network effect.
+        </p>
+      </div>
+      <div>
+        <h3>Open source. Auditable.</h3>
+        <p>
+          AGPL-3.0. Every app is a small repo you can read, fork, or replace.
+          No closed-source server you have to trust. No tracking pixels. No
+          telemetry. No "AI training data" small print.
+        </p>
+      </div>
+      <div>
+        <h3>For enterprises.</h3>
+        <p>
+          Built for teams that want to own their data, run on their own
+          infrastructure, and avoid vendor lock-in. If those are your
+          requirements, this is the substrate.
+        </p>
+        <p class="muted">
+          What's not here yet: SSO, audit logs, retention policies, SOC2.
+          If those are deal-breakers today, watch this space — and feel
+          free to <a href="https://github.com/solid-teams/solid-teams/issues" target="_blank" rel="noopener">open an issue</a>
+          with your specific need.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="install" class="install">
+    <h2>Install in 2 minutes</h2>
+    <ol>
+      <li>
+        <p>Make sure you have <a href="https://nodejs.org/" target="_blank" rel="noopener">Node 18+</a>.</p>
+      </li>
+      <li>
+        <p>Install jspod and solid-teams:</p>
+        <pre><code>npm i -g jspod solid-teams</code></pre>
+      </li>
+      <li>
+        <p>Start a pod (or point at one you already run):</p>
+        <pre><code>jspod start --idp</code></pre>
+      </li>
+      <li>
+        <p>Install the team workspace into it:</p>
+        <pre><code>solid-teams install</code></pre>
+      </li>
+      <li>
+        <p>Open <code>http://localhost:4443/public/apps/plaza/</code> and you're in.</p>
+      </li>
+    </ol>
+    <p class="install-foot">
+      Or run against any existing Solid pod:
+      <code>solid-teams install --pod https://your-team.example</code>
+    </p>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span>solid-teams · AGPL-3.0 · made for teams that own their data</span>
+    <span class="footer-sep">·</span>
+    <a href="https://github.com/solid-teams/solid-teams" target="_blank" rel="noopener">GitHub</a>
+    <span class="footer-sep">·</span>
+    <a href="https://github.com/solid-apps" target="_blank" rel="noopener">solid-apps</a>
+    <span class="footer-sep">·</span>
+    <a href="https://github.com/JavaScriptSolidServer/JavaScriptSolidServer" target="_blank" rel="noopener">JSS</a>
+  </div>
+</footer>
+
+</body>
+</html>

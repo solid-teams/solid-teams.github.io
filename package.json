@@ -1,0 +1,42 @@
+{
+  "name": "solid-teams",
+  "version": "0.0.1",
+  "description": "Federated team workspace on your own pods — Slack-shaped chat, DMs, shared docs, team blog, task tracking, file browser. Built on Solid + JSS. For teams that want to own their data.",
+  "type": "module",
+  "bin": {
+    "solid-teams": "bin/solid-teams.js"
+  },
+  "files": [
+    "bin",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "start": "node bin/solid-teams.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/solid-teams/solid-teams.git"
+  },
+  "keywords": [
+    "solid",
+    "team",
+    "workspace",
+    "chat",
+    "slack-alternative",
+    "federated",
+    "self-hosted",
+    "decentralised"
+  ],
+  "homepage": "https://solid-teams.github.io/",
+  "bugs": {
+    "url": "https://github.com/solid-teams/solid-teams/issues"
+  },
+  "license": "AGPL-3.0-only",
+  "engines": {
+    "node": ">=18"
+  },
+  "peerDependencies": {
+    "jspod": "*"
+  }
+}
